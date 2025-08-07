@@ -1,15 +1,15 @@
-package br.com.dio.dio_design_pattern_project.service.impl;
+package br.com.dio.board.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.dio.dio_design_pattern_project.model.Card;
-import br.com.dio.dio_design_pattern_project.model.Column;
-import br.com.dio.dio_design_pattern_project.repository.ICardRepository;
-import br.com.dio.dio_design_pattern_project.repository.IColumnRepository;
-import br.com.dio.dio_design_pattern_project.service.CardService;
+import br.com.dio.board.model.Card;
+import br.com.dio.board.model.Column;
+import br.com.dio.board.repository.ICardRepository;
+import br.com.dio.board.repository.IColumnRepository;
+import br.com.dio.board.service.CardService;
 
 @Service
 public class CardServiceImpl implements CardService {

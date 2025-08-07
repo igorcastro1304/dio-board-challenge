@@ -1,15 +1,15 @@
-package br.com.dio.dio_design_pattern_project.service.impl;
+package br.com.dio.board.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.dio.dio_design_pattern_project.model.Board;
-import br.com.dio.dio_design_pattern_project.model.Column;
-import br.com.dio.dio_design_pattern_project.repository.IBoardRepository;
-import br.com.dio.dio_design_pattern_project.repository.IColumnRepository;
-import br.com.dio.dio_design_pattern_project.service.ColumnService;
+import br.com.dio.board.model.Board;
+import br.com.dio.board.model.Column;
+import br.com.dio.board.repository.IBoardRepository;
+import br.com.dio.board.repository.IColumnRepository;
+import br.com.dio.board.service.ColumnService;
 
 @Service
 public class ColumnServiceImpl implements ColumnService {
