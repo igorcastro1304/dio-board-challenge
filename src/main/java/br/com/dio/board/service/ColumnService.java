@@ -1,6 +1,6 @@
-package br.com.dio.dio_design_pattern_project.service;
+package br.com.dio.board.service;
 
-import br.com.dio.dio_design_pattern_project.model.Column;
+import br.com.dio.board.model.Column;
 
 public interface ColumnService {
 	Iterable<Column> getAll();

@@ -1,13 +1,13 @@
-package br.com.dio.dio_design_pattern_project.service.impl;
+package br.com.dio.board.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.dio.dio_design_pattern_project.model.Board;
-import br.com.dio.dio_design_pattern_project.repository.IBoardRepository;
-import br.com.dio.dio_design_pattern_project.service.BoardService;
+import br.com.dio.board.model.Board;
+import br.com.dio.board.repository.IBoardRepository;
+import br.com.dio.board.service.BoardService;
 
 @Service
 public class BoardServiceImpl implements BoardService {

@@ -1,4 +1,4 @@
-package br.com.dio.dio_design_pattern_project.controller;
+package br.com.dio.board.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,41 +10,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.dio.dio_design_pattern_project.model.Card;
-import br.com.dio.dio_design_pattern_project.service.CardService;
+import br.com.dio.board.model.Board;
+import br.com.dio.board.service.BoardService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
-@RequestMapping("cards")
-public class CardRestController {
+@RequestMapping("boards")
+public class BoardRestController {
 	@Autowired
-	private CardService cardService;
+	private BoardService boardService;
 	
 	@GetMapping
-	public ResponseEntity<Iterable<Card>> getAll() {
-		return ResponseEntity.ok(cardService.getAll());
+	public ResponseEntity<Iterable<Board>> getAll() {
+		return ResponseEntity.ok(boardService.getAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Card> getById(@PathVariable Long id) {
-		return ResponseEntity.ok(cardService.getById(id));
+	public ResponseEntity<Board> getById(@PathVariable Long id) {
+		return ResponseEntity.ok(boardService.getById(id));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Card> add(@RequestBody Card card) {
-		cardService.add(card);
-		return ResponseEntity.ok(card);
+	public ResponseEntity<Board> add(@RequestBody Board board) {
+		boardService.add(board);
+		return ResponseEntity.ok(board);
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Card> update(@PathVariable Long id, @RequestBody Card card) {
-		cardService.update(id, card);
-		return ResponseEntity.ok(card);
+	public ResponseEntity<Board> update(@PathVariable Long id, @RequestBody Board board) {
+		boardService.update(id, board);
+		return ResponseEntity.ok(board);
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		cardService.delete(id);
+		boardService.delete(id);
 		return ResponseEntity.ok().build();
 	}
 }

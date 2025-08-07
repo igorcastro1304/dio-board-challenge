@@ -1,4 +1,4 @@
-package br.com.dio.dio_design_pattern_project.model;
+package br.com.dio.board.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

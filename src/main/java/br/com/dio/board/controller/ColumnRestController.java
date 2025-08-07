@@ -1,4 +1,4 @@
-package br.com.dio.dio_design_pattern_project.controller;
+package br.com.dio.board.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,41 +10,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.dio.dio_design_pattern_project.model.Board;
-import br.com.dio.dio_design_pattern_project.service.BoardService;
+import br.com.dio.board.model.Column;
+import br.com.dio.board.service.ColumnService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
-@RequestMapping("boards")
-public class BoardRestController {
+@RequestMapping("columns")
+public class ColumnRestController {
 	@Autowired
-	private BoardService boardService;
+	private ColumnService columnService;
 	
 	@GetMapping
-	public ResponseEntity<Iterable<Board>> getAll() {
-		return ResponseEntity.ok(boardService.getAll());
+	public ResponseEntity<Iterable<Column>> getAll() {
+		return ResponseEntity.ok(columnService.getAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Board> getById(@PathVariable Long id) {
-		return ResponseEntity.ok(boardService.getById(id));
+	public ResponseEntity<Column> getById(@PathVariable Long id) {
+		return ResponseEntity.ok(columnService.getById(id));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Board> add(@RequestBody Board board) {
-		boardService.add(board);
-		return ResponseEntity.ok(board);
+	public ResponseEntity<Column> add(@RequestBody Column column) {
+		columnService.add(column);
+		return ResponseEntity.ok(column);
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Board> update(@PathVariable Long id, @RequestBody Board board) {
-		boardService.update(id, board);
-		return ResponseEntity.ok(board);
+	public ResponseEntity<Column> update(@PathVariable Long id, @RequestBody Column column) {
+		columnService.update(id, column);
+		return ResponseEntity.ok(column);
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		boardService.delete(id);
+		columnService.delete(id);
 		return ResponseEntity.ok().build();
 	}
 }
