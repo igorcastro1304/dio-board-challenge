@@ -1,0 +1,7 @@
+<databaseChangelog>
+	<includeAll>
+		<path>
+			db/changelog/migrations
+		</path>
+	</includeAll>
+</databaseChangelog>

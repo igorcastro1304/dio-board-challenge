@@ -48,6 +48,25 @@
   			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
   			<version>2.5.0</version>
 		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version> <!-- Use the latest stable version -->
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+		    <groupId>org.liquibase</groupId>
+		    <artifactId>liquibase-core</artifactId>
+		    <version>4.24.0</version>
+		    <configuration>
+		        <propertyFile>liquibase.properties</propertyFile>
+		    </configuration>
+		</dependency>
+		<dependency>
+		    <groupId>com.mysql</groupId>
+		    <artifactId>mysql-connector-j</artifactId>
+		    <version>8.3.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
