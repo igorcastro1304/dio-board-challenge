@@ -15,7 +15,8 @@ public class Card {
 	private Long id;
 	private String title;
 	private String description;
-	private LocalDateTime date;
+	private LocalDateTime createdAt;
+	private LocalDateTime finishedAt;
 	private boolean isLocked;
 	@ManyToOne
 	private Column column;
@@ -44,14 +45,22 @@ public class Card {
 		this.description = description;
 	}
 	
-	public LocalDateTime getDate() {
-		return date;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
-	
-	public void setDate(LocalDateTime date) {
-		this.date = date;
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
-	
+
+	public LocalDateTime getFinishedAt() {
+		return finishedAt;
+	}
+
+	public void setFinishedAt(LocalDateTime finishedAt) {
+		this.finishedAt = finishedAt;
+	}
+
 	public boolean isLocked() {
 		return isLocked;
 	}
