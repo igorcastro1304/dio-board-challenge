@@ -26,8 +26,9 @@ public class Column {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
+	private int order;
 	@Enumerated(EnumType.STRING)
-	private ColumnType type;
+	private ColumnType columnType;
 	@ManyToOne
 	private Board board;
 	@OneToMany
@@ -50,11 +51,11 @@ public class Column {
 	}
 	
 	public ColumnType getType() {
-		return type;
+		return columnType;
 	}
 	
-	public void setType(ColumnType type) {
-		this.type = type;
+	public void setType(ColumnType columnType) {
+		this.columnType = columnType;
 	}
 	
 	public Board getBoard() {
@@ -71,5 +72,13 @@ public class Column {
 
 	public void setCards(Set<Card> cards) {
 		this.cards = cards;
+	}
+
+	public int getOrder() {
+		return order;
+	}
+
+	public void setOrder(int order) {
+		this.order = order;
 	}
 }
