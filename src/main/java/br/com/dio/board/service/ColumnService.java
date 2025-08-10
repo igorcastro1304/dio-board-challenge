@@ -1,15 +1,21 @@
 package br.com.dio.board.service;
 
-import br.com.dio.board.model.Column;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Optional;
 
-public interface ColumnService {
-	Iterable<Column> getAll();
+import br.com.dio.board.dao.ColumnDAO;
+import br.com.dio.board.entity.ColumnEntity;
+import lombok.AllArgsConstructor;
 
-	Column getById(Long id);
+@AllArgsConstructor
+public class ColumnService {
 
-	void add(Column column);
+    private final Connection connection;
 
-	void update(Long id, Column column);
-
-	void delete(Long id);
+    public Optional<ColumnEntity> getById(final Long id) throws SQLException {
+        ColumnDAO dao = new ColumnDAO(connection);
+        
+        return dao.findById(id);
+    }
 }
