@@ -1,26 +1,20 @@
-package br.com.dio.board.model;
+package br.com.dio.board.entity;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
-@Entity
-public class Card {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+@Data
+public class CardEntity {
 	private Long id;
 	private String title;
 	private String description;
+	private int order;
 	private LocalDateTime createdAt;
 	private LocalDateTime finishedAt;
-	private boolean isLocked;
-	@ManyToOne
-	private Column column;
-
+	private boolean isBlocked;
+	private ColumnEntity column = new ColumnEntity();
+	
 	public Long getId() {
 		return id;
 	}
@@ -45,35 +39,43 @@ public class Card {
 		this.description = description;
 	}
 	
+	public int getOrder() {
+		return order;
+	}
+	
+	public void setOrder(int order) {
+		this.order = order;
+	}
+	
 	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
-
+	
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
-
+	
 	public LocalDateTime getFinishedAt() {
 		return finishedAt;
 	}
-
+	
 	public void setFinishedAt(LocalDateTime finishedAt) {
 		this.finishedAt = finishedAt;
 	}
-
-	public boolean isLocked() {
-		return isLocked;
+	
+	public boolean isBlocked() {
+		return isBlocked;
 	}
 	
-	public void setLocked(boolean isLocked) {
-		this.isLocked = isLocked;
+	public void setBlocked(boolean isBlocked) {
+		this.isBlocked = isBlocked;
 	}
 	
-	public Column getColumn() {
+	public ColumnEntity getColumn() {
 		return column;
 	}
-
-	public void setColumn(Column column) {
+	
+	public void setColumn(ColumnEntity column) {
 		this.column = column;
 	}
 }
